@@ -31,7 +31,7 @@ $conditions = mysqli_query($conn, "SELECT * FROM conditions ORDER BY category AS
     </nav>
 
     <section class="hero-section container">
-        <span class="badge-future">Klinik Mata NAPNAPCare</span>
+        <span class="badge-future">Analysis Result</span>
         <h1 class="hero-title">Kesehatan Mata Adalah <br> <span>Kemewahan Sejati.</span></h1>
     </section>
 
