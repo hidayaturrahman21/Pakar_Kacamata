@@ -35,9 +35,7 @@ INSERT INTO `conditions` (`id_condition`, `condition_code`, `category`, `conditi
 
 -- --------------------------------------------------------
 
---
--- Struktur dari tabel `frame_kacamata`
---
+
 
 DROP TABLE IF EXISTS `frame_kacamata`;
 CREATE TABLE IF NOT EXISTS `frame_kacamata` (
@@ -50,9 +48,7 @@ CREATE TABLE IF NOT EXISTS `frame_kacamata` (
   KEY `id_recommendation` (`id_recommendation`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data untuk tabel `frame_kacamata`
---
+
 
 INSERT INTO `frame_kacamata` (`id_frame`, `nama_frame`, `bahan`, `id_recommendation`, `deskripsi`) VALUES
 (1, 'Sporty TR90', 'Plastik TR90', 4, 'Frame lentur dan tahan banting, cocok untuk lensa Polycarbonate.'),
@@ -61,9 +57,6 @@ INSERT INTO `frame_kacamata` (`id_frame`, `nama_frame`, `bahan`, `id_recommendat
 
 -- --------------------------------------------------------
 
---
--- Struktur dari tabel `history_diagnosa`
---
 
 DROP TABLE IF EXISTS `history_diagnosa`;
 CREATE TABLE IF NOT EXISTS `history_diagnosa` (
@@ -76,9 +69,6 @@ CREATE TABLE IF NOT EXISTS `history_diagnosa` (
   KEY `id_recommendation` (`id_recommendation`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data untuk tabel `history_diagnosa`
---
 
 INSERT INTO `history_diagnosa` (`id_history`, `nama_user`, `tanggal`, `id_recommendation`, `hasil_skor`) VALUES
 (1, 'Guest User', '2026-05-12 00:40:22', 3, 1),
@@ -87,11 +77,7 @@ INSERT INTO `history_diagnosa` (`id_history`, `nama_user`, `tanggal`, `id_recomm
 (4, 'Guest User', '2026-05-12 00:57:23', 2, 1),
 (5, 'Guest User', '2026-05-12 01:02:03', 2, 1);
 
--- --------------------------------------------------------
 
---
--- Struktur dari tabel `recommendations`
---
 
 DROP TABLE IF EXISTS `recommendations`;
 CREATE TABLE IF NOT EXISTS `recommendations` (
@@ -103,9 +89,7 @@ CREATE TABLE IF NOT EXISTS `recommendations` (
   PRIMARY KEY (`id_recommendation`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data untuk tabel `recommendations`
---
+
 
 INSERT INTO `recommendations` (`id_recommendation`, `lens_name`, `lens_category`, `description`, `reasoning`) VALUES
 (1, 'Blue Ray Lens', 'Digital Protection', 'Lensa pelindung sinar biru', 'Mengurangi paparan layar'),
@@ -115,11 +99,7 @@ INSERT INTO `recommendations` (`id_recommendation`, `lens_name`, `lens_category`
 (5, 'Anti-Glare Lens', 'Night Vision', 'Mengurangi silau malam', 'Cocok berkendara malam'),
 (6, 'Standard Lens', 'Standard', 'Lensa standar', 'Penggunaan umum');
 
--- --------------------------------------------------------
 
---
--- Struktur dari tabel `rules`
---
 
 DROP TABLE IF EXISTS `rules`;
 CREATE TABLE IF NOT EXISTS `rules` (
@@ -132,9 +112,7 @@ CREATE TABLE IF NOT EXISTS `rules` (
   KEY `id_recommendation` (`id_recommendation`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data untuk tabel `rules`
---
+
 
 INSERT INTO `rules` (`id_rule`, `rule_name`, `id_recommendation`, `confidence_weight`, `reasoning_rule`) VALUES
 (1, 'Rule Blue Ray', 1, 90, 'Paparan layar menyebabkan mata lelah'),
@@ -143,11 +121,6 @@ INSERT INTO `rules` (`id_rule`, `rule_name`, `id_recommendation`, `confidence_we
 (4, 'Rule Polycarbonate', 4, 80, 'Olahraga butuh lensa aman'),
 (5, 'Rule Anti Glare', 5, 88, 'Menyetir malam butuh anti silau');
 
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `rule_details`
---
 
 DROP TABLE IF EXISTS `rule_details`;
 CREATE TABLE IF NOT EXISTS `rule_details` (
@@ -162,9 +135,6 @@ CREATE TABLE IF NOT EXISTS `rule_details` (
   KEY `id_condition` (`id_condition`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data untuk tabel `rule_details`
---
 
 INSERT INTO `rule_details` (`id_detail`, `id_rule`, `id_condition`, `weight_score`, `mb`, `md`) VALUES
 (1, 1, 6, 40, 0, 0),
@@ -176,11 +146,8 @@ INSERT INTO `rule_details` (`id_detail`, `id_rule`, `id_condition`, `weight_scor
 (7, 4, 13, 70, 0, 0),
 (8, 5, 8, 50, 0, 0);
 
--- --------------------------------------------------------
 
---
--- Struktur dari tabel `tips_kesehatan`
---
+
 
 DROP TABLE IF EXISTS `tips_kesehatan`;
 CREATE TABLE IF NOT EXISTS `tips_kesehatan` (
@@ -192,9 +159,6 @@ CREATE TABLE IF NOT EXISTS `tips_kesehatan` (
   KEY `id_recommendation` (`id_recommendation`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data untuk tabel `tips_kesehatan`
---
 
 INSERT INTO `tips_kesehatan` (`id_tips`, `id_recommendation`, `judul_artikel`, `isi_artikel`) VALUES
 (1, 1, 'Tips Proteksi Mata Radiasi', 'Gunakan aturan 20-20-20 saat menatap layar...'),
